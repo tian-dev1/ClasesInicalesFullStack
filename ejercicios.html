@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios</title>
+</head>
+
+<body>
+    <script>
+        var cantDatos = Number(prompt("Digite cantidad de datos númericos"));
+
+/*
+!isNaN(num) = si es diferente de un string osea true
+hasta que sea insertado un numero terminará el ciclo o hasta que se escriba fin
+*/
+  	if(!isNaN(cantDatos) && cantDatos != null && cantDatos != ""){
+  		alert('es numero');
+  	}else{
+        var cantDatos = Number(prompt("Digite cantidad de datos númericos"));
+  	}
+
+
+
+        var array = [];
+        var arrayTotal = [];
+
+        for (i = 0; i < cantDatos; i++) {
+            var numero = Number(prompt());
+            arrayTotal.push(numero)
+            if(numero !=0){
+                array.push(numero);         
+            }
+        }
+        document.write(`Array total: ${arrayTotal} <br> Array sin ceros ${array}`);
+
+
+    </script>
+</body>
+
+</html>

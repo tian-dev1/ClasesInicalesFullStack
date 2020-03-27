@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+            Do While (Estructura iterativa)
+            el bucle se ejecuta 
+        */
+        // let i=0;
+
+        // do{
+        //     document.write(`Número: ${i} <br>`)
+        //     i++;
+        // }while(i<10);
+
+        // Metodos o funciones para cadenas
+
+
+        // let cadena = prompt("Ingrese una frase");
+
+        // document.write(`logintud de la cadena ${cadena.length} <br>`)
+        // document.write(`Cadena en minuscula ${cadena.toLowerCase()} <br>`)
+        // document.write(`Cadena en mayuscula ${cadena.toUpperCase()} <br>`)
+        // document.write(`Caracter en primera posición ${cadena.charAt(1)} <br>`)
+    
+        // let caracter = prompt("Escriba un caracter a buscar");
+        // document.write(`<br> <hr> Posición de letra: ${cadena.indexOf(caracter)}`);
+        // document.write(`<br> <hr> Posición de letra: ${cadena.lastIndexOf(caracter)} <br>`);
+        // document.write(cadena.split(""))
+
+
+        // document.write(`<br> <hr> Reemplazar: ${cadena.replace(" ", "-")}`);
+        
+        // document.write(`<br> <hr> SubString: ${cadena.substr(0,4)}`);
+
+
+        let alfa1 = ["A", "B", "C"];
+        let alfa2 = ["D", "E", "F"];
+
+        let grupoA, grupoB, inverso
+
+        grupoA = alfa1.concat(alfa2);
+        document.write(`concat: ${grupoA} <br>`);
+
+        grupoB = grupoA.join("*");
+        document.write(`join: ${grupoB} <br>`)
+        
+        grupoA.pop();
+        document.write(`pop: ${grupoA} <br>`);
+        
+        grupoA.push("G");
+        document.write(`push: ${grupoA} <br>`);
+
+        grupoA.shift();
+        document.write(`shift: ${grupoA} <br>`);
+
+        grupoA.unshift("Z");
+        document.write(`unshift: ${grupoA} <br>`);
+
+
+        inverso = grupoA.reverse();
+        document.write(`${inverso} <br>`)
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 01 JavaScript</title>
+
+</head>
+<body>
+    <!-- JavaScript referenciado 
+    <script src="./Javascript/javaScript.js"></script> -->
+
+    <script>
+        /* 
+            Lenguaje interpretado que se basa en programción orientada a prototipos 
+            Es, síncrono, es dicr que tiene una cadena de ejecución secuencial.
+            Funciona del lado del cliente (usuario -navegador)
+            Dédilmente tipado
+
+            var, let y const
+            var ->  declaramos una variable que sea de ámbito global
+                        en la actualidad es muy poco usada
+            let ->  declaramos una variable de ámbito local
+            const ->declaramos una constante.
+            
+            Tipos de datos:
+                String -> cadenas de texto Ej. let nombre = "Cristian" // let edad= "10"
+                Number -> número ej: let edad = 10 
+                FLoat -> decimales
+                Boolean ->verdadero o false Ej. let activado = false
+
+
+        let x = 5;
+        let y = 2;
+
+        let suma = x + y;
+        document.write(`La suma es  ${suma}`)
+
+
+        //Operadores de asignación // Comparativas o rleacionales
+
+
+        */
+
+
+        // let x = 2;
+        // let y = "2";
+
+        // document.write(`variable x: ${x} <br> variable y: ${y}`);
+
+        // let mayor = x>y;
+        // console.log(`mayor = ${mayor}`)
+
+        // let mayorIgual = x>=y
+        // console.log(`mayor o igual = ${mayorIgual}`)
+
+        // let menor = x<y
+        // console.log(`menor = ${menor}`)
+
+        // let menorIgual = x<=y
+        
+        // console.log(`menor o igual = ${menorIgual}`)
+
+        // let igual = x==y;
+        // console.log(`Igual = ${igual}`)
+
+        // let igualEstricto = x===y
+        // console.log(`Igual estricto = ${igualEstricto}`)
+
+
+        /* 
+            CamelCase 
+            lowerCase 
+            UpperCase
+        */
+
+
+
+
+        /* 
+        let respuesta = Number(prompt("Ingrese numero"));
+
+
+        if(respuesta > 5){
+            alert("Buen trabajo");
+
+            if(respuesta != 6){
+                alert("Perfecto");
+            } else{
+                alert("Esperabamos que número fuese 6");
+            }
+        } else{
+            alert("No es un número mayor a 5");
+        }
+        */
+
+        /*
+        let opcionUsuario = prompt("Ingrese un número del 1 al 3");
+
+        switch(opcionUsuario){
+            case "1":
+                alert("Escogió el número 1");
+                break;
+            case "2":
+                alert("Escogió el número 2");
+                break;
+            case "3":
+                alert("Escogió el número 3");
+                break;
+            default:
+                alert("No es un número del 1 al 3")
+        } 
+        */
+
+        // for(i = 0; i <= 10; i++){
+        //     for(j=10; j>=0; j--){
+        //         let result = i * j;
+        //         document.write(`Número ${result} <br>`)
+        //     }
+            
+        // }
+
+        // let i = 0;
+
+        // while(i<=10){
+        //     document.write(`Número ${i} <br>`)
+        //     i++;
+        // }
+
+          let dias = ["lunes", "martes", "miercoles", "jueves", "viernes", "sabado", "domingo"]  ;
+          for(i=0; i<dias.length; i++){
+              document.write(`${dias[i]} <br>`)
+          }
+
+    </script>
+</body>
+</html>
