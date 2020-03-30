@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taller #1</title>
+</head>
+
+<body>
+    <script>
+
+            while (true) {
+                var  opcion = Number(prompt("Digite el número del ejercicio que desea realizar (1-7)"));
+                   
+                    if (!isNaN(opcion) && opcion != null && opcion != "" && opcion <= 7) {
+                        switch (opcion) {
+
+                            case 1:
+                                let parcial1 = Number(prompt("Digite nota del parcial 1"));
+                                let parcial2 = Number(prompt("Digite nota del parcial 2"));
+                                let parcial3 = Number(prompt("Digite nota del parcial 3"));
+                                let examen = Number(prompt("Digite nota del examen"));
+                                let trabajoFinal = Number(prompt("Digite nota del trabajo final"));
+
+                                promedioParcial = (parcial1 + parcial2 + parcial3) / 3
+
+
+                                promedioParcial = promedioParcial * 0.55
+
+                                examen = examen * 0.3;
+                                trabajoFinal = trabajoFinal * 0.15;
+
+                                let notaFinal = promedioParcial + examen + trabajoFinal;
+
+                                console.log("Nota final " + notaFinal.toFixed(2))
+                                document.write(`Nota final <strong> ${notaFinal.toFixed(2)} </strong>`)
+                                break;
+
+                            case 2:
+                                var numero = Math.floor(Math.random() * 50) + 1
+                                //console.log(numero);
+
+                                var numeroUsuario = 0
+                                let contadorE2 = 1
+
+                                while (numero != numeroUsuario && contadorE2 < 11) {
+
+                                    numeroUsuario = Number(prompt("Digite número del 1 al 50  Intento número " + contadorE2 + " \nPuedes ver las pistas en consola" ));
+
+                                    let diferencia = Math.abs(numero - numeroUsuario);
+
+                                    if (diferencia <= 5) {
+                                        console.log("Su número esta muy cerca del número oculto")
+                                        contadorE2++
+
+                                    } else if (diferencia >= 6 && diferencia <= 15) {
+                                        console.log("Su número esta cerca del número oculto");
+                                        contadorE2++
+                                    } else {
+                                        console.log("Su número esta lejos del número oculto");
+                                        contadorE2++
+                                    }
+
+                                }
+                                if (numero === numeroUsuario) {
+                                    console.log(`Le has dado. El número es: " ${numero}`);
+                                } else {
+                                    console.log(`Han pasado tus diez intentos. El número correcto es:  ${numero}`);
+                                }
+                                break;
+
+                            case 3:
+                                let cantTotal = Number(prompt("Ingrese la cantidad de numeros a evaluar"));
+                                let cantPares = 0
+                                let cantInpares = 0
+                                for (i = 0; i < cantTotal; i++) {
+                                    numberUser = Number(prompt("Ingrese uno a uno los números"));
+
+                                    if (numberUser % 2 == 0) {
+                                        cantPares++
+                                    } else {
+                                        cantInpares++
+                                    }
+                                }
+
+                                let porcPares = cantPares * 100 / cantTotal;
+                                let porcInpares = cantInpares * 100 / cantTotal;
+
+                                document.write(`La cantidad de pares es: ${porcPares}% <br> La cantidad de inpares es: ${porcInpares}%`)
+                                break;
+
+                            case 4:
+                                                                
+                                let num = Number(prompt('porfavor ingrese 1 para ver los números del 1 al 100 o 2 para ver números del 101 al 200'));
+
+                                switch (num) {
+                                    case 1:
+                                        for (i = 0; i <= 100; i++) {
+                                            console.log(i);
+                                        }
+                                        alert("Visualización del resultado por consola")
+                                    break;
+
+                                    case 2:
+                                        for (i = 101; i <= 200; i++) {
+                                            console.log(i);
+                                        }
+                                        alert("Visualización del resultado por consola")
+                                    break;
+
+                                    default:
+                                        console.log("Número invalido");
+                                    break;
+
+                                }        
+                            break;
+
+                            case 5:
+                                while (true) {
+                                    let palabra = prompt('Escriba la palabra a evaluar');
+
+                                    var palabInvertida = [""];
+
+                                    for (i = palabra.length - 1; i >= 0; i--) {
+                                        palabInvertida += palabra[i];
+                                    }
+
+                                    if (palabra == "") {
+                                        alert('Campo vacio');
+                                        continue;
+                                    } else if (palabra == palabInvertida) {
+                                        document.write(`La palabra <strong> ${palabra} </strong> es un palíndromo`);
+                                        break;
+                                    } else {
+                                        document.write(`La palabra <strong> ${palabra} </strong> No es un palíndromo`);
+                                        break;
+                                    }
+                                }
+                                break;
+
+                            case 6:
+                                contadorE6 = 0;
+                                var nombres = [""];
+
+                                while (nombre != "") {
+                                    var nombre = prompt("Ingrese nombre a guardar");
+                                    var igualdad = false;
+                                    for (i = 0; i < nombres.length; i++) {
+                                        if (nombres[i] == nombre) {
+                                            igualdad = true;
+                                        }
+                                    }
+                                    if (igualdad == true) {
+                                        nombres = nombres;
+                                        nombres.sort();
+                                    } else {
+                                        nombres[contadorE6] = nombre;
+                                        nombres.sort();
+                                        contadorE6++;
+                                    }
+                                }
+                                nombres.shift();
+                                document.write(`Lista de nombres sin repeticiones: <strong> ${nombres} </strong> `);
+                                break;
+
+                            case 7:
+                                let palabra = prompt("Ingrese la palabra a evaluar");
+                                let cantLetrasTotal = palabra.length;
+                                let palabraInvertida = "";
+                                let palabraSinEspacios = palabra.replace(/ /g, "");
+                                let cantLetras = palabraSinEspacios.length;
+                                let espacios = cantLetrasTotal - cantLetras;
+                                while (cantLetrasTotal >= 0) {
+                                    palabraInvertida = palabraInvertida + palabra.charAt(cantLetrasTotal);
+                                    cantLetrasTotal--;
+                                }
+                                alert("Visualización del resultado por consola")
+                                console.log(`Tu palabra al revés es: ${palabraInvertida}`);
+                                console.log(`tu palabra tiene: ${cantLetras} letras y  ${espacios} espacio`);
+                                break;
+                            default:
+                                document.write("opcion incorrecta");
+                                break;
+
+
+                        } 
+                        break;
+                    } else if (opcion == 'salir') {
+                        break;
+                    } else {
+                        alert('Dato ingresado invalido intentelo nuevamente');
+                        continue;
+                    }
+            }
+
+
+
+
+
+    </script>
+</body>
+
+</html>
