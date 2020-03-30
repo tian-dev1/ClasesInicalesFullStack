@@ -9,32 +9,62 @@
 
 <body>
     <script>
-        var cantDatos = Number(prompt("Digite cantidad de datos númericos"));
 
-/*
-!isNaN(num) = si es diferente de un string osea true
-hasta que sea insertado un numero terminará el ciclo o hasta que se escriba fin
-*/
+    //Ejercicio número 1
+
+    var cantDatos = Number(prompt("Digite cantidad de datos númericos"));
+
+    /*
+    !isNaN(num) = si es diferente de un string osea true
+    hasta que sea insertado un numero terminará el ciclo o hasta que se escriba fin
+    */
   	if(!isNaN(cantDatos) && cantDatos != null && cantDatos != ""){
   		alert('es numero');
   	}else{
         var cantDatos = Number(prompt("Digite cantidad de datos númericos"));
   	}
 
+    var array = [];
+    var arrayTotal = [];
+
+    for (i = 0; i < cantDatos; i++) {
+        var numero = Number(prompt());
+        arrayTotal.push(numero)
+        if(numero !=0){
+            array.push(numero);         
+        }
+    }
+    document.write(`Array total: ${arrayTotal} <br> Array sin ceros ${array}`);
 
 
-        var array = [];
-        var arrayTotal = [];
 
-        for (i = 0; i < cantDatos; i++) {
-            var numero = Number(prompt());
-            arrayTotal.push(numero)
-            if(numero !=0){
-                array.push(numero);         
+        //Ejercicio número 2
+        
+        var noDatos = parseInt(prompt("Ingrese el número de datos"));
+        var datos = []
+        var strings = []
+        var numeros = []
+
+        //ingresar datos
+        for(var i = 0; i < noDatos; i++){
+            datos.push(prompt("ingrese el dato"))
+        //Sacar arreglos para letras y números
+            if(isNaN(Number(datos[i])) == true){
+                strings.push(datos[i])
+            }else{
+                numeros.push(Number(datos[i]))
             }
         }
-        document.write(`Array total: ${arrayTotal} <br> Array sin ceros ${array}`);
 
+        //poner datos organizados
+        strings.sort()
+        numeros.sort()
+
+        //organizardatos, primeros letras luego numeros
+        datos = strings.concat(numeros)
+
+        //imprimir datos organizados
+        document.write(`los datos organizados son ${datos}`)
 
     </script>
 </body>
