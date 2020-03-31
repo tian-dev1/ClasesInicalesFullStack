@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase #4</title>
+</head>
+<body>
+    <script>
+        // A pedal
+        // let suma;
+
+        // suma = a+b;
+        // console.log(suma);
+
+        // suma = c+d; 
+        // console.log(suma);
+
+        // suma = e+f;
+        // console.log(suma);
+
+
+        /* 
+            Usando funciones
+            Antecedida por la palabra reservada function.
+            function nombreFuncion(){
+                bloque de código a ejecutar
+            }
+
+            //Arrow Function ES6
+            ()=>{
+
+            }
+
+            Se debe invocar a la función y pasar el argumento del parametro
+            nombreFuncion(argumento)
+
+            parametro = Variable con la cual la función va a trabajar
+            argumento = Dato del parámetro
+        */
+
+
+        let a=1, b=4, c=3, d=5, e=2, f=10;
+
+        function sumarNumeros(numero1, numero2){
+            let sumaTotal = numero1 + numero2
+            console.log(sumaTotal);
+            document.write(sumaTotal)
+        }
+
+        sumarNumeros(a,b);
+        sumarNumeros(c,d);
+        sumarNumeros(e,f);
+        sumarNumeros(4,15);
+
+
+        /* 
+            Scope (Alcance) -> Variable local & variable global
+                Variable local = Aquella en la cual podemos acceder a su respectivo
+                valor únicamente desde el lugar del código donde se haya declarado. 
+                Acceder por fuera de su ubicación nos generará problemas del Scope }
+                (variable not defined)
+
+            Variable Global = Aquella a la cual podemos acceder a su contenido desde cualquier parte del código.
+            Scope = REgla o standar de programación que nos indica el buen manejo de variables locales o globales. 
+            Aplica para todos los lenguajes de programación
+        */
+
+        saludo = "hola"; //variable global
+
+        function decirTema(nombre){
+            let tema = 'JavaScript';
+            console.log(`${saludo} ${nombre}, hoy veremos ${tema}`)
+        }
+
+        decirTema('Cristian');
+        decirTema('Camilo')
+
+
+
+    </script>
+</body>
+</html>

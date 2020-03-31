@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POO</title>
+</head>
+<body>
+    <script>
+        /* 
+            POO -> Representación en código de objetos de la vida real 
+                siendo estos accciones programadas para el aplicativo,
+                servidor, ordenador etc, pueden interpretarlos y ejecutarlos.
+
+                Clase = Objeto que vamos a crear
+                    Inicio en mayúscula
+            Gracias a ES6 y sus mejoras con ES7 ya se puede utilizar a JS como POO
+        
+        
+            Programación orientada a prototipos
+            
+            function Persona(nombre, apellido){
+                this.nombre = nombre;
+                this.apellido = apellido;
+            }
+
+            Persona.prototype.presentar = function(){
+                algo a ejecutar
+            }
+        
+        
+        */
+
+        class Persona{
+            //constructor -> Se va a inicializar cuando invoquemos a la clase
+            //Contiene las caracteristicas del objeto
+            constructor(nombre, apellido, profesion){ //Creación e Inicialización de los datos de la clase
+                this.nombre = nombre;
+                this.apellido = apellido;
+                this.profesion = profesion;
+            }
+
+            //métodos -> función propia de una clase (objeto)
+            presentar(){
+                return `Mi nombre es: ${this.nombre} ${this.apellido} , soy ${this.profesion} <br>`
+            }
+        }
+
+        function saludar(){
+            let saludo = 'Hola, buenos días '
+            return saludo;
+        }
+
+        //Para poder utilizar un objeto o una clase usamos la instacia
+        //Guardar en una variable un nuevo objeto
+        //Se recomienda que la variable tenga el mismo nombre del objeto en minúscula
+    
+        let persona = new Persona('Pepe', 'Pepito', 'Medico');
+        console.log(typeof(persona)); // Object, Object
+        document.write(saludar() + persona.presentar());
+    
+
+        class Edad extends Persona{
+            constructor(nombre, apellido, profesion, edad){
+                super(nombre, apellido, profesion);
+                this.edad = edad;
+            }
+
+            presentar(){
+                return `${super.presentar()} y tengo ${this.edad}`;
+            }
+
+          ;
+
+        }
+            
+        let estudiante = new Edad('daniel', 'sanchez', 'estudiante', 19);
+        document.write(estudiante.presentar())
+
+        /* 
+            class String{
+                constructor(string){
+                    this.string = string;
+                }
+
+                split(){
+                    bloque de código
+                }
+            }
+
+
+            let cadena = new String('buenos días');
+            cadena.split()
+
+        */
+
+
+        /* 
+            ejercicio:
+            Crear un objeto auto que tengas las siguientes caracteristicas: Marca, modelo, kilometraje.
+            Crear un segundo objeto llamado Conductor que herede las características de Auto, además debe permitir agregar color del auto y nombre del conductor.
+
+            ej: Mi nombre es pepito, tengo un audi modelo 2019 con xxx km de color negro
+        
+            */
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    </script>
+</body>
+</html>

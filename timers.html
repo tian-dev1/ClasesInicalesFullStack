@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timers</title>
+</head>
+<body>
+    <script>
+        /* 
+            Fechas: 
+            Por medio de JS podemos extraer la fecha actual
+            de nuestro pc, a través de una instacia de un nuevo objeto
+            objeto: Date()
+        */
+
+        // let fecha = new Date();
+        // document.write(fecha.getHours() + "<br>"); //Extraer la hora 
+        // document.write(fecha.getMinutes() + "<br>"); //Extraer la minutos
+        // document.write(fecha.getSeconds() + "<br>"); //Extraer la segundos
+        // document.write(fecha.getDay() + "<br>"); //Extraer el día
+        // document.write(fecha.getDate() + "<br>"); //Extraer la fecha
+        // document.write(fecha.getMonth() + "<br>"); //Extraer el mes lo trabaja en forma de arreglo [Ene, Feb, Mar]
+        // document.write(fecha.getFullYear() + "<br>"); //Extraer el año
+        // document.write(fecha.getYear() + "<br>"); //  Error debido al Y2K formula = (año actual - 1900) 
+        
+
+        /* 
+            Timers 
+            Métodos de JS que nos permiten ejecutar una función
+            un determinado tiempo.
+            métodoTimer(función a ejecutar, el tiempo en milisegundos);
+
+            Existen dos tipos:
+                setTimeout = Ejecutar la función una sola vez cuando se cumpla el tiempo especificado 
+                setInterval = Ejecutar la función cada vez que se cumpla el tiempo especificado
+
+        */
+
+
+        // function saludo(){
+        //     console.log("Hola");
+        // }
+
+
+        //setTimeout(saludo, 3000); //Toma el tiempo en milisengundos para mostrar el resultado
+        //setTimeout(saludo(), 3000); //No toma el tiempo en milisengundos para mostrar el resultado ya te se esta llamando directamente la función debido a sus parentesis
+        
+
+        //setInterval(saludo, 3000); //Toma el tiempo en milisengundos para mostrar x veces el resultado
+        //setInterval(saludo(), 3000); //No toma el tiempo en milisengundos para mostrar el resultado ya te se esta llamando directamente la función debido a sus parentesis
+        
+
+        cont = 0;
+        function numero(){
+            cont++
+            document.write(cont + '<br>');
+
+            if(cont === 5){
+                clearInterval(intervalo);
+            }
+        }
+
+        intervalo = setInterval(numero, 2000)
+    </script>
+</body>
+</html>

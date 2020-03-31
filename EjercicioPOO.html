@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio POO </title>
+</head>
+<body>
+    <script>
+        class Automovil{
+            //constructor -> Se va a inicializar cuando invoquemos a la clase
+            //Contiene las caracteristicas del objeto
+            constructor(marca, modelo, kilometraje){ //Creación e Inicialización de los datos de la clase
+                this.marca = marca;
+                this.modelo = modelo;
+                this.kilometraje = kilometraje;
+            }
+
+            //mostrar metodo propio del objeto Automovil
+            mostrar(){
+                return `Marca: <strong> ${this.marca} </strong> <br> Modelo: <strong> ${this.modelo} </strong> <br> Kilometros: <strong> ${this.kilometraje} </strong> <br>`
+            }
+
+            
+        }
+        //instancias del objeto Automovil
+        let automovil1 = new Automovil('Ford', '2019', '2000km');
+        let automovil2 = new Automovil('Chevrolet', '2016', '10000km');
+        let automovil3 = new Automovil('Nissan', '2015', '15000km');
+
+        //document.write(automovil1.mostrar(), automovil2.mostrar(), automovil3.mostrar() );
+
+        //Objeto conductor que hereda de Automovil
+        class Conductor extends Automovil{
+            //constructor -> Se va a inicializar cuando invoquemos a la clase
+            //Contiene las caracteristicas del objeto
+            constructor(marca, modelo, kilometraje, color, nombreConductor){ //Creación e Inicialización de los datos de la clase
+                super(marca, modelo, kilometraje);
+                this.color = color;
+                this.nombreConductor = nombreConductor;
+            }
+            //mostrar metodo propio del objeto Automovil
+            mostrardatosTotales(){
+                return `${super.mostrar()} color: <strong> ${this.color} </strong> <br> nombre conductor: <strong> ${this.nombreConductor} </strong> <br><br>`;
+            }
+
+        }
+        //instancias del objeto Conductor
+        let compra1 = new Conductor( automovil1.marca, automovil1.modelo, automovil1.kilometraje, 'Azul', 'Cristian');
+        let compra2 = new Conductor( automovil2.marca, automovil2.modelo, automovil2.kilometraje, 'Rojo', 'Camilo');
+        let compra3 = new Conductor( automovil3.marca, automovil3.modelo, automovil3.kilometraje, 'Verde', 'Pepito');
+        
+        //Mestra en pantalla los datos finales 
+        document.write(compra1.mostrardatosTotales())
+        document.write(compra2.mostrardatosTotales())
+        document.write(compra3.mostrardatosTotales())
+
+    </script>
+</body>
+</html>
