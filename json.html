@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON :: JavaScript Object Notation</title>
+</head>
+<body>
+    <div id="prueba">
+        <input type="text" id="dato" />
+        <input type="text" id="edad">
+        <button id="btn"> Enviar</button> <br>
+    </div>
+
+    <p id="result">Hola </p>
+    <script>
+        /* 
+            Json - Objeto de tipo literal
+            class Objeto{} // new Objeto() - Objeto Construido
+
+            Formato de texto ligero que nos permite enviar datos, compartirlos
+            ESta es la forma en la cual viajan los metodos en una petición y en respuesta
+            {"clave" : "valor", "clave2": "valor2"}
+        */
+
+        // let datosJson = {
+        //     "instituto": "Bictia",
+        //     "instructor": "Kamilo",
+        //     "Alumnos": 23,
+        //     "Empresa": "Rappi"
+        // }
+
+        // console.log(datosJson);
+
+        /* 
+            Convertir a objeto literal JSON
+                JSON.parse(dato);
+            Convertir JSON a string
+                JSON.stringify(dato);
+        */
+
+        //Acceder a un valor de una clave json
+        //variable.clave / variable ['clave']
+        //document.getElementById('prueba').innerHTML += datosJson;
+
+
+
+
+
+
+
+
+        let btn = document.getElementById('btn');
+        btn.addEventListener('click', function(){ //callback
+            datosUsuario = {}
+            let nombreUsuario = document.getElementById('dato').value;
+            let edadUsuario = document.getElementById('edad').value;
+
+            datosUsuario.nombre = nombreUsuario; //{'nombre': nombreUsuario}
+            datosUsuario.edad = edadUsuario;
+            
+            console.log(datosUsuario);
+
+            //Crear nuestro localStorage
+            localStorage.setItem('usuario', JSON.stringify(datosUsuario)); //JSON.stringify convertir el json a string de formato JSON para poder acceder a su valor
+
+
+            //Obtener dato de el localStorage
+            let datoJson = JSON.parse(localStorage.getItem('usuario'));
+            document.getElementById('result'). innerHTML += datoJson.nombre;
+        })
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modificar Atributos DOM</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: #ddd;
+            display: inline-block;
+            margin-right: 10px;
+            border: 1px solid #aaa;
+        }
+
+        .azul{
+            background-color: #0000ff;
+            border: 1px solid #000;
+        }
+
+        .rojo{
+            background-color: #ff0000;
+            border: 5px solid gray;
+        }
+
+        .verde{
+            width: 1000px;
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <section id="contenedor">
+        <div class=""></div>
+        <div class=""></div>
+    </section>
+
+
+    <script>
+        let elemento = document.createElement('div');
+        //Buscar padre de los elementos por medio del ID
+        let padre = document.getElementById('contenedor');
+        // Creamos el nodo de referencia
+        let ref = document.getElementsByTagName('div')[0];
+        // Agregar el elemento a la posición que deseemos
+        padre.insertBefore(elemento, ref);
+
+
+        /* 
+            setAttribute() a partir de este método podemos agregar atributos 
+            a un elemento creado por el DOM 
+            variabñeElemento.setAttribute('atributo', 'valor del Atributo')
+        */
+
+        elemento.setAttribute('class', 'azul') // <div class="azul">
+            elemento.setAttribute('id', 'nuevaCaja')
+        elemento.className = "rojo verde";
+
+
+
+        /* 
+            -------------------------Eliminar una Clase------------
+        
+        */
+
+        elemento.classList.remove('verde');
+        //elemeneto.className = ""
+
+
+        /*Pedir al usuario que ingrese una palabra por cada letra del abeceario
+            EL texto se va a guardar y debe verse en un div en el HTML.
+            Debe existir un contador que se debe visualizar en la parte superior
+            derecha del div
+            Los colores de fondo del div y el color de texto deben ser generados de forma aleatorio 
+            ya que ningun div debe tener los mismos estilos todo usando el DOM Y FUNCIONES
+        */
+    </script>
+</body>
+</html>

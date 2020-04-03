@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM: Document Object Model</title>
+</head>
+<body>
+    <div>
+        <h1>Hola DOM</h1>
+    </div>
+
+    <div id="prueba">
+        <p>Uno [0]</p>
+        <p>Dos [1]</p>
+        <p>Tres [2]</p>
+
+        <div>
+            <p>Cuatro [3]</p>
+            <p>Cinco [4]</p>
+        </div>
+    </div>
+
+    <script>
+        /* 
+            DOM -> Permite manipular el HTML por medio del JavaScript
+            brindado un sitio web más dinámico mejorando
+            la experiencia de usuario .
+            También es conocido com oarblo de nodos
+            (tree Node)
+
+            Nodo -> Cada uno de los elementos que harán parte del documento.
+            ES decir, cada una de los etiquetas HTML que existen o que existirán.
+            
+            Se llama nodo por ser un punto de intersección entre un lado Ay un lado B
+
+        */
+
+        //Crear nodo
+        // 1. Crear el elemento -> Qué etiqueta vamos a crear
+        let elemento = document.createElement("h2") // <h2></h2>
+        // 2. Crear el elemento - Text node
+        let contenido = document.createTextNode("Soy un nuevo elemento") ;
+        
+        // 3. Agregar el contenido al elemento creado
+        //appendChild() simepre agregar el elemento al final
+        elemento.appendChild(contenido);
+
+        // 4. Agregar el elemento al documento HTML
+        document.getElementById('prueba').appendChild(elemento)
+
+
+        /* 
+            ---------Manipular posición del nodo---------------
+            El método getElementsByTagName() siempre devuelve un arreglo
+            de elementos (etiquetas HTML)
+            ['Uno', 'Dos', 'Tres', 'Cuatro', 'Quinto'];
+        
+        */
+
+        //Definir el nodo Padre con la relación a las etiquetas a posicionar 
+        // let primero = document.getElementsByTagName('p')[0].parentNode;
+
+        //Una referencia para poder posicionar nuestro nodo 
+        let hijo = document.getElementsByTagName('p')[2];
+
+        //Insertar en la posicion deseada nuestro nodo
+        // nodoPadre.insertBefore(nodoCreado, nodoReferencia);
+
+        //insertBefore inserta el elemento antes de nodo de referencia 
+        // primero.insertBefore(elemento, hijo);
+
+
+
+
+
+
+        /*
+            -------------------Reemplazar contenido nodo ----------------
+            innerHTML -> pERMITE INTERPRETAR CÓDIGO html
+            textContent -> Genera texto plano
+            += concatenar nuevas instrucciones a un div con contenido previo
+        */
+
+        // elemento.innerHTML += " Querido <i>pepe</i>" 
+        elemento.textContent += "Querido <i>pepe</i>"
+
+
+
+
+        /* 
+            ------------------Reemplazar un nodo -------------------------
+            
+        */
+        let primero = document.getElementsByTagName('p')[3].parentNode;
+        //Una referencia para poder posicionar nuestro nodo
+        let nodoCambio = document.getElementsByTagName('p')[3];
+
+        primero.replaceChild(elemento, nodoCambio);
+
+        /*
+            ------------ ELiminar un nodo ------------
+        */
+
+        primero.removeChild(elemento);
+    </script>
+</body>
+</html>

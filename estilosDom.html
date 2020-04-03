@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modificar estilos DOM</title>
+    <style>
+        .tamaño{
+            font-size: 60px;
+        }
+        .fondo{
+            border: 1px solid navy;
+            background-color: #ccc;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="encabezado" class="tamanio fondo">
+        Me van a cambiar los estilos con el dom
+    </h1>
+
+    <script>
+        let encabezado = document.getElementById('encabezado');
+        encabezado.style.background = "lightblue";
+        encabezado.style.color = "#fff";
+        encabezado.style.paddingTop = '100px'
+    </script>
+</body>
+</html>

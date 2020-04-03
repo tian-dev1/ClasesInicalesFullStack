@@ -1,0 +1,47 @@
+body {
+    /* font-family: 'Source Sans Pro', sans-serif;      #E51B23     #343a40*/
+    margin: 0px;
+    background: #EBEBEB;
+}
+
+.header {
+    height: 70px;
+}
+
+.navbarInicial {
+    background: #EBEBEB;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.header ol {
+    /* alinear los items que esten dentro de ol */
+    display: flex;
+}
+
+ol,
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+figure {
+    margin: 0;
+}
+
+.header a {
+    /* Poner color a la letra y quitar el sudrayado*/
+    color: black;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    height: inherit;
+    padding: 0 20px;
+}
+
+header a:hover {
+    color: #636363;
+}
