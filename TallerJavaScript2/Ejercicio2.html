@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio #2 || Taller #2 JS</title>
+    <style>
+        #container{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        div{
+            width: 150px;
+            height: 150px;
+            background: linear-gradient(#e66465, #9198e5);
+            margin: 5px;
+            border: 1px solid #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+
+        }
+    </style>
+</head>
+<body>
+    <h1>Ejercicio #2</h1>
+    <button style="margin-bottom: 10px;" id="addDiv" onclick="crear()">Agregar div</button>
+        <button style="margin-bottom: 10px;" id="deltedDivs" onclick="borrar()">Eliminar divs</button>
+        <button style="margin-bottom: 10px;" id="deltedImparDivs" onclick="eliminarPar()">Eliminar divs impares</button>
+        <button style="margin-bottom: 10px;" id="removeDiv" onclick="eliminarEspecifico()">Eliminar div especifico</button>
+    <section id="container">
+
+    </section>
+    <script>
+        var numeroCon = 0
+        let elemento = document.createElement("div");
+
+        function crear(){
+            numeroCon++;
+            var id = "id" + numeroCon;
+            let elemento = document.createElement('div')
+            let contenido = document.createTextNode(`${numeroCon}`);
+
+            elemento.appendChild(contenido);
+            document.getElementById("container").appendChild(elemento);
+            elemento.setAttribute("id", id);
+
+        }
+
+        function borrar(){
+            document.getElementById("container").innerHTML = "";
+            numeroCon=0;
+        }
+
+
+        function eliminarEspecifico(){
+            var indice = Number(prompt("Digite numero de div a eliminar"));
+            var eliminar = "id" + indice;
+            console.log(eliminar)
+            document.getElementById(eliminar).remove();
+
+            
+        }
+
+        function eliminarPar(){
+            for(i=1; i<numeroCon; i++){
+                if(i % 2==1){
+                    document.getElementById("id" + i).remove();
+                }
+            }
+        }
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

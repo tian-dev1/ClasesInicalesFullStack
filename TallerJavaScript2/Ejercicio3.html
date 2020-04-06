@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio #3 || Taller #2 JS</title>
+    <style>
+        #container{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+        div{
+            width: 100px;
+            height: 100px;
+            margin: 5px;
+        }
+
+        .Color1{
+            background: linear-gradient(#f1f519, #818405);
+        }
+
+        .Color2{
+            background: linear-gradient(#f3790e, #af5201);
+        }
+
+        .Color3{
+            background: linear-gradient(#e72b2b, #851313);
+        }
+
+        .Color4{
+            background: linear-gradient(#8aee1f, #37670d);
+        }
+
+        .Color5{
+            background: linear-gradient(#72b2e7, #0f3d63);
+        }
+    </style>
+
+</head>
+<body>
+    <h1>Ejercicio #3</h1>
+    <section id="container">
+        <div onmouseover="darleColorFondo(this, 'Color1')" onmouseout="quitarFondo(this)" class="Color1"></div>
+        <div onmouseover="darleColorFondo(this, 'Color2')" onmouseout="quitarFondo(this)" class="Color2"></div>
+        <div onmouseover="darleColorFondo(this, 'Color3')" onmouseout="quitarFondo(this)" class="Color3"></div>
+        <div onmouseover="darleColorFondo(this, 'Color4')" onmouseout="quitarFondo(this)" class="Color4"></div>
+        <div onmouseover="darleColorFondo(this, 'Color5')" onmouseout="quitarFondo(this)" class="Color5"></div>
+    </section>
+
+    <script>
+        function darleColorFondo(elemento, clase){
+            elemento.style.border = "1px solid black";
+            document.body.className = clase;
+        }
+    
+        function quitarFondo(elemento){
+            elemento.style.border = "";
+            document.body.className = ""
+        }
+    </script>
+</body>
+</html>
