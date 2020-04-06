@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio #4 || Taller #2 JS</title>
+    <style>
+        #image{
+            display: block;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ejercicio #4</h1>
+    <div>
+        <div class="divButtons">
+            <button id="aumentar" onclick="aumentarZoom()" >Aumentar zoom</button>
+            <button id="disminuir" onclick="disminuirZoom()" disabled>Disminuir zoom</button>
+        </div>
+        <img id="image" src="./FondoUbuntu.jpeg" alt="Fondo Ubuntu" width="500" height="300">
+        
+    </div>
+
+    <script>
+
+        let image = document.getElementById('image');
+        let opcionNumerica = 1;
+         
+        
+        
+
+    //AÑADE UN CLICK AL EJECUTAR LA FUNCIÓN
+    function aumentarZoom() {
+        document.getElementById("disminuir").removeAttribute("disabled"); 
+            switch (opcionNumerica) {
+
+                case 1:
+                    console.log("Opcion 1")
+
+                    image.style.transition = "width 2s, height 2s";
+                    image.style.width = "600px"
+                    image.style.height = "400px"
+
+                    opcionNumerica = opcionNumerica + 1
+                    break;
+                case 2:
+                    console.log("Opcion 2")
+                    image.style.transition = "width 2s, height 2s";
+                    image.style.width = "700px"
+                    image.style.height = "500px"
+
+                    opcionNumerica = opcionNumerica + 1
+                    break;
+                case 3:
+                    console.log("Opcion 3")
+                    image.style.transition = "width 2s, height 2s";
+                    image.style.width = "800px"
+                    image.style.height = "600px"
+
+                    opcionNumerica = opcionNumerica + 1
+                    break;
+                case 4:
+                    console.log("Opcion 4")
+                    image.style.transition = "width 2s, height 2s";
+                    image.style.width = "900px"
+                    image.style.height = "700px"
+
+                    opcionNumerica = opcionNumerica + 1
+                    break;
+                default:
+                alert("Has llegado al zoom máximo");
+                document.getElementById("aumentar").setAttribute("disabled", "");
+            } 
+            
+        
+    }
+
+    function disminuirZoom() {
+
+       
+                opcionNumerica = opcionNumerica -1 
+
+                switch (opcionNumerica) {
+
+                    case 1:
+                    console.log("Opcion 1")
+
+                    image.style.transition = "width 2s, height 2s";
+                    image.style.width = "500px"
+                    image.style.height = "300px"
+
+                   
+                    break;
+                case 2:
+                    console.log("Opcion 2")
+                    image.style.transition = "width 2s, height 2s";
+                    image.style.width = "600px"
+                    image.style.height = "400px"
+
+                  
+                    break;
+                case 3:
+                    console.log("Opcion 3")
+                    image.style.transition = "width 2s, height 2s";
+                    image.style.width = "700px"
+                    image.style.height = "500px"
+
+                 
+                    break;
+                case 4:
+                    console.log("Opcion 4")
+                    image.style.transition = "width 2s, height 2s";
+                    image.style.width = "900px"
+                    image.style.height = "700px"
+
+             
+                    break;
+                default:
+                alert("Has llegado al zoom mínimo");
+                document.getElementById("disminuir").setAttribute("disabled", "");
+                }
+            } 
+        
+
+
+
+
+
+
+
+    
+    </script>
+</body>
+</html>
