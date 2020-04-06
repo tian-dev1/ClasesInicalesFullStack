@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio #1 || Taller #2 JS</title>
+    <style>
+        .video-controls {
+   position: absolute;
+   width: 50px;
+   height: 20px;
+   cursor: pointer;
+   background-color: #FFF;
+   border: 1px solid #000;
+}
+
+#play-btn {
+   left: 5px;
+}
+
+#pause-btn {
+   left: 5px;
+}
+
+#mute-btn {
+   left: 60px;
+}
+
+#unmute-btn {
+   left: 60px;
+}
+
+#stop-btn {
+   left: 115px;
+}
+
+#replay-btn {
+   left: 115px;
+}
+    </style>
+</head>
+<body>
+    <h1>Ejercicio #1</h1>
+    <button id="playPause">Reproducir/Pausar</button>
+    <button id="reload">Recargar</button>
+    <button id="makeLarge">Maximizar</button>
+    <button id="makeSmall">Minimizar</button>
+    <button id="makeNormal">Normal</button>
+    <button onclick="document.getElementById('videoPlayer').volume+=0.1">Aumentar el Volumen</button>
+  <button onclick="document.getElementById('videoPlayer').volume-=0.1">Disminuir el Volumen</button>
+    <br><br>
+    <video id="videoPlayer" width="500">
+        <source src="./f8.mp4" type="video/mp4">
+        Tu navegador no soporta el vídeo de HTML5
+    </video>
+
+
+
+
+<script> 
+    var video = document.getElementById("videoPlayer");
+
+
+    //Para pausar o reproducir el video
+    document.getElementById('playPause')
+    .addEventListener('click', function (e) {
+        if (video.paused) 
+            video.play(); 
+        else 
+            video.pause(); 
+    });
+
+    //Para recargar el video
+    document.getElementById('reload')
+    .addEventListener('click', function (e) {
+        video.load(); 
+        video.play(); 
+    });
+
+    //Para cambiar al tamaño mayor el video
+    document.getElementById('makeLarge')
+    .addEventListener('click', function (e) {
+        video.width = 1000; 
+    });
+
+    //Para cambiar al tamaño pequeño el video
+    document.getElementById('makeSmall')
+    .addEventListener('click', function (e) {
+        video.width = 250;
+    });
+
+    //Para cambiar al tamaño normal el video
+    document.getElementById('makeNormal')
+    .addEventListener('click', function (e) {
+        video.width = 500;
+    });
+
+    
+</script>
+</body>
+</html>
