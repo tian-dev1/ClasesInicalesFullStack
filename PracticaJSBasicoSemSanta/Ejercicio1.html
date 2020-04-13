@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio #1</title>
+</head>
+<body>
+    <script>
+        //Ejercicio #1
+        while (true) {
+            let num = prompt('porfavor ingrese un numero');
+            if (!isNaN(num) && num != null && num != "") {
+
+                if(num == 0){
+                    console.log(`El numero ${num} es: Neutro`);   
+                }else if (num > 0){
+                    console.log(`El numero ${num} es: Positivo`); 
+                } else{
+                    console.log(`El numero ${num} es: Negativo`);
+                }
+                break;
+
+            }else {
+                alert('No es un dato valido ingrese de nuevo');
+                continue;
+            }
+        }
+
+    </script>
+</body>
+</html>

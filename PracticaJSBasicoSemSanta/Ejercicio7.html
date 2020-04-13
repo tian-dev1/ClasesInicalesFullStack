@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio #7</title>
+</head>
+<body>
+    <script>
+         //Ejercicio #7
+        // Funcion para calcular si el numero es multiplo
+        function hayarMultiplos(valor, multiple)
+        {
+             // utilizando el modulo de la division
+            resto = valor % multiple;
+            if(resto==0)
+                return true;
+            else
+                return false;
+        }
+        // Arrays que contendran los valores multiples del 8
+        var multiplos=[];
+        const numero = 8;
+
+        // bucle del 1 al 500
+        for(var i=1;i<=500;i++)
+        {
+            if(hayarMultiplos(i,numero))
+                multiplos.push(i);
+        }
+        console.log(`Los multiplos de ${numero} son: ${multiplos}`);
+
+
+    </script>
+</body>
+</html>

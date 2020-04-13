@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio #8</title>
+</head>
+<body>
+    <script>
+        //Ejercicio #8
+        function figuraA(numPisos) {
+            for (let i = 1; i <= numPisos; i= i+2) {
+                
+                let piso = ''.padStart(i, "*").concat("".padStart(numPisos - i, " "))
+                console.log(piso)
+            }
+
+                for (let i = (numPisos -2); i>=1; i = i-2) {
+                    let piso = ''.padStart(i, "*").concat("".padStart(numPisos - i, " "))
+                    console.log(piso)
+                }
+            }
+
+            figuraA(9);
+
+
+            function figuraB(numPisos) {
+                for (let i = numPisos; i>=1; i = i-2) {
+                    let piso = ''.padStart(i, "*").concat("".padStart(numPisos - i, " "))
+                    console.log(piso)
+
+                }
+
+                for (let i = 3; i <= numPisos; i= i+2) {
+                
+                let piso = ''.padStart(i, "*").concat("".padStart(numPisos - i, " "))
+                console.log(piso)
+                }
+            }
+            figuraB(9); 
+
+            let numPisos = Number(prompt("Digite número"))
+            function figuraC(numPisos) {
+                    for (let i = numPisos; i >= 1; i--) {
+                        let piso = ''.padStart(i, "*").concat("".padStart(numPisos - i, " "))
+                        console.log(piso)
+
+                    }
+                }
+                figuraC(numPisos);
+    </script>
+</body>
+</html>

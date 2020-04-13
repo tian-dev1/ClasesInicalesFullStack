@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divs</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: #ddd;
+            display: inline-block;
+            margin-right: 10px;
+            border: 1px solid #aaaaaa;
+        }
+    </style>
+</head>
+<body>
+    <section id="menu">
+        <button id="btn1">Crear Div</button>
+        <button id="btn2">Eliminar Divs</button>
+        <button id="btn3">Mostrar Div Pares</button>
+        <button id="btn4">ELiminar especifico</button>
+    </section>
+
+    <section id="contenedor">
+
+    </section>
+
+    <script>
+        var parent = document.getElementById('contenedor');
+        var element = document.getElementsByTagName('div');
+        var contador = 1;
+
+        //BOton de crear divs 
+        documnet.getElementById('btn1').addEventListener('click', function(){
+            var nuevoDIv = document.createElement('div');
+            var txt = documnet.createTextNode(contador);
+            nuevoDiv.appendChild(txt); //Creado con valor
+            parent.appendChild(nuevoDiv); //Agregar al padre
+            contador = contador + 1;
+        })
+
+        //Boton eliminar los divs
+        document.getElementById('btn2').addEventListener('click', function(){
+            //innerHTML = ""
+            //parent.remove()
+            //for + removeChild()
+            /* for(i = 0; i<div.length; i++){
+                var hijos = document.getElementById(element[i])
+                parent.remoteChild(element);
+            } */
+            while(parent.firstChild){
+                parent.removeChild(parent.firstChild)
+            }
+        })
+
+
+
+        //Boton para eliminar impares - saber si el div es par o impar 
+        document.getElementById('btn3').addEventListener('click', function(){
+            //recorrer todos los divs que existen
+            for(i=0; i < element.length; i++){
+                if(element[i]%2 != 0){
+                    element[i].remove();
+
+                }else{
+                    alert('No hay divs impares a eliminar')
+                }
+            }
+        })
+
+
+        //Eliminar div en especifico 
+        
+    </script>
+</body>
+</html>

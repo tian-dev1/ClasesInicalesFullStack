@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .row{
+            overflow: auto;
+        }
+        .col{
+            float: left;
+        }
+        .dos{
+            width: 50%;
+        }
+        #jugadorUno{
+            height: 400px;
+            background-color: rgba(240, 100, 100, 0.7);
+        }
+        #jugadorCpu{
+            height: 400px;
+            background-color: rgba(100, 250, 100, 0.7);
+        }
+        #mostrarLetra{
+            text-align: center;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="row">
+        <div class="row" id="mostrarLetra"></div>
+        <div class="col dos" id="jugadorUno">
+            <input type="text" id="nombre" placeholder="Nombre"/>
+            <br>
+            <input type="text" id="apellido" placeholder="Apellido"/>
+            <br>
+            <input type="text" id="animal" placeholder="Animal"/>
+            <br>
+            <input type="text" id="cosa" placeholder="Cosa"/>
+            <br>
+            <input type="text" id="fruta" placeholder="Fruta"/>
+            <br>
+            <input type="text" id="color" placeholder="Color"/>
+            <br>
+            <button id="btn">Enviar</button>
+        </div>
+
+        <div class="col dos" id="jugadorCpu">
+
+        </div>
+    </div>
+
+    <script>
+        document.bgColor = "blue"
+        //Obtener los ID
+        let padre = document.getElementById('jugadorCpu')
+        let btn = document.getElementById('btn');
+
+        //Crear el arreglo de letras y palabras de debera escoger la quina al azar
+        let letrasEscoger = [
+        {'letra': 'a', 'datosMaquina' : ['angie','avilan','araña','anillo','anon','amarillo']},
+        {'letra' : 'b', 'datosMaquina' : ['brayan', 'bermudez', 'burro', 'bote', 'banana', 'blanco'] }
+        ];
+
+        //FLujo de la máquina
+        //Mostrar letra
+        setTimeout(function(){
+            var i = Math.floor(Math.random()* letrasEscoger.length);
+            document.getElementById('mostrarLetra').innerHTML = letrasEscoger[i].letra;
+            
+            //funcionalidad jugar stop de la maquina
+            var cont = 0;
+            function jugarMaquina(){
+                padre.innerHTML += `<input id='dato${cont}' type='text' value='${letrasEscoger[i].datosMaquina[cont]}'/><br>`
+                cont++;
+
+                if(cont === 6){
+                    clearInterval(intervalo) 
+                    //Mostrar mensaje ganador de la maquina
+                    setTimeout(function (){
+                        alert('Ganaste!!!');
+                        location.reload();
+                    }, 2000);
+                }
+            }
+
+            var intervalo = setInterval(jugarMaquina, 2000);
+        }, 2000);
+
+
+        //Flujo Usuario
+        btn.addEventListener('click', function(){
+            let datosUsuario = {};
+            let nombre = documen.getElementById('nombre').value;
+            let apellido = documen.getElementById('apellido').value
+            let animal = documen.getElementById('animal').value
+            let cosa = documen.getElementById('cosa').value
+            let fruta = documen.getElementById('fruta').value
+            let color = documen.getElementById('color').value
+
+
+
+            datosUsuario.nombre = nombre;
+            datosUsuario.apellido = apellido;
+            datosUsuario.animal = animal;
+            datosUsuario.cosa = cosa;
+            datosUsuario.fruta = fruta;
+            datosUsuario.color = color;
+
+            alert('has ganado!!');
+            location.reload();
+
+            localStorage.setItem('partida', JSON.stringify(datosUsuario));
+            console.log(datosUsuario);
+            
+
+        })
+    </script>
+</body>
+</html>

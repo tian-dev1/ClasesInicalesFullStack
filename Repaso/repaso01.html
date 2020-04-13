@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repaso</title>
+</head>
+<body>
+    <script>
+        let lista = new Array;
+        let nombre;
+        //el ciclo debia salirse de la ejecución cuando exitiese un espacio
+        do{
+           nombre = prompt("ingrese un nombre");
+                //Operador ternario (nombre != "") ? lista.push(nombre : lista.pop())
+
+
+           //validar si el valor del prompt es vacio para agregar el dato al arreglo
+           if(nombre != ""){
+               //validacion de nombre repetido 
+               if(lista.includes() === false){
+                   lista.push(nombre);
+                /* 
+                    shift + alt + a
+                    for(i = 0; i <= lista.legth; i++){
+                        if(nombre == lista[i]){
+                            //No lo debe guardar
+                        }else{
+                            lista.push(nombre)
+                        }
+                    }
+                */
+
+               }else{
+                   alert("El nombre ya existe, por favor ingresa otro");
+               }
+           } else{
+               alert('Lista completada')
+           }
+        }while(nombre != "")
+
+        console.log(lista.sort());
+
+        
+    </script>
+</body>
+</html>

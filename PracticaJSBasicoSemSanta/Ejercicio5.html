@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio #5</title>
+</head>
+<body>
+    <script>
+        //Ejercicio #5
+        while (true) {
+            let figura = Number(prompt("Digite el número de la figura. \n 1. Cuadrado  2. Rectángulo  3. Triangulo  4. Circulo"))
+            if (!isNaN(figura) && figura != null && figura != ""){
+                switch(figura){
+                    case 1:
+                        let ladoCuadrado = Number(prompt("Digite el valor de uno de sus lados del cuadrado"));
+                        let areaCuadrado = ladoCuadrado*ladoCuadrado
+
+                        console.log(`El área del cuadrado es: ${areaCuadrado}`)
+                    
+                    break;
+
+                    case 2:
+                        let baseRectangulo = Number(prompt("Digite el valor de la base del rectangulo"))
+                        let alturaRectangulo = Number(prompt("Digite el valor de la altura del rectangulo"))
+
+                        let areaRectangulo = baseRectangulo*alturaRectangulo
+
+                        console.log(`El área del rectangulo es: ${areaRectangulo}`);
+                    
+                    break;
+
+                    case 3:
+                        let baseTriangulo = Number(prompt("Digite el valor de la base del triangulo"))
+                        let alturaTriangulo = Number(prompt("Digite el valor de la altura del triangulo"))
+
+                        let areaTriangulo = (baseTriangulo*alturaTriangulo)/2
+
+                        console.log(`El área del triangulo es: ${areaTriangulo}`);
+
+                    break;
+
+                    case 4:
+                        let radioCirculo = Number(prompt("Digite el valor del radio del circulo"))
+
+                        let areaCirculo = (radioCirculo*radioCirculo)*3.1416
+
+                        console.log(`El área del circulo es: ${areaCirculo}`);
+
+                    break;
+
+                    default: 
+                    console.log("Opción no valida");
+                }break;
+                
+
+            }else {
+                alert('No es un dato valido ingrese de nuevo');
+                continue;
+            }
+        }
+    </script>
+</body>
+</html>

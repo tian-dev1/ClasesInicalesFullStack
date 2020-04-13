@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica JS  Básico Semana Santa</title>
+</head>
+<body>
+    <div class="cronometro">
+        <div id="hms"></div>
+        <div class="boton start"></div>        
+        <div class="boton stop"></div>
+        <div class="boton reiniciar"></div>
+    </div>
+    <script>
+        //Ejercicio #1
+        /* while (true) {
+            let num = prompt('porfavor ingrese un numero escriba fin para terminar');
+            if (!isNaN(num) && num != null && num != "") {
+
+                if(num == 0){
+                    console.log(`El numero ${num} es: Neutro`);   
+                }else if (num > 0){
+                    console.log(`El numero ${num} es: Positivo`); 
+                } else{
+                    console.log(`El numero ${num} es: Negativo`);
+                }
+                break;
+
+            }else {
+                alert('No es un dato valido ingrese de nuevo');
+                continue;
+            }
+        } */ 
+
+
+
+
+        //Ejercicio #2
+       /*  let cantEdades = 0
+        let edades = [];
+        let suma = 0;
+
+
+        while(true){
+            cantEdades = Number(prompt("Digite la cantidad de edades"))
+
+            if (!isNaN(cantEdades) && cantEdades != null && cantEdades != "") {
+                for (let i = 1; i <= cantEdades; i++) {
+                    let edad = Number(prompt(`Digite edad ${i}`))
+                    edades.push(edad);
+
+
+                }
+                //Array que almacena las edades
+                console.log(edades)
+
+                for (let i = 0; i < edades.length; i++) {
+                    console.log(`la suma de ${suma} + ${edades[i]} igual a:`);
+                    suma += edades[i];
+                    console.log(suma)
+                }
+                alert(`El promedio de edad es: ${suma / edades.length}`);
+            }else {
+                alert('No es un dato valido ingrese de nuevo');
+                continue;
+            }
+        }
+ */
+        
+
+            //Ejercicio #3
+            
+
+
+
+            //Ejercicio #4
+            /* 
+            let palabra = prompt("Digite la palabra a evaluar");
+            let contador = 0;
+            for (i = 0; i < palabra.length; i++) {
+                if ((palabra.charAt(i) == 'a') || (palabra.charAt(i) == 'e') || (palabra.charAt(i) == 'i') || (palabra.charAt(i) == 'o') || (palabra.charAt(i) == 'u')) {
+                    contador++;
+                
+                
+                }
+            }
+            console.log(`Su frase ${palabra} tiene ${contador} vocales`);
+            */
+
+            //Ejercicio #5
+            
+            /* while (true) {
+            let figura = Number(prompt("Digite el número de la figura. \n 1. Cuadrado  2. Rectángulo  3. Triangulo  4. Circulo"))
+            if (!isNaN(figura) && figura != null && figura != ""){
+                switch(figura){
+                    case 1:
+                        let ladoCuadrado = Number(prompt("Digite el valor de uno de sus lados del cuadrado"));
+                        let areaCuadrado = ladoCuadrado*ladoCuadrado
+
+                        console.log(`El área del cuadrado es: ${areaCuadrado}`)
+                    
+                    break;
+
+                    case 2:
+                        let baseRectangulo = Number(prompt("Digite el valor de la base del rectangulo"))
+                        let alturaRectangulo = Number(prompt("Digite el valor de la altura del rectangulo"))
+
+                        let areaRectangulo = baseRectangulo*alturaRectangulo
+
+                        console.log(`El área del rectangulo es: ${areaRectangulo}`);
+                    
+                    break;
+
+                    case 3:
+                        let baseTriangulo = Number(prompt("Digite el valor de la base del triangulo"))
+                        let alturaTriangulo = Number(prompt("Digite el valor de la altura del triangulo"))
+
+                        let areaTriangulo = (baseTriangulo*alturaTriangulo)/2
+
+                        console.log(`El área del triangulo es: ${areaTriangulo}`);
+
+                    break;
+
+                    case 4:
+                        let radioCirculo = Number(prompt("Digite el valor del radio del circulo"))
+
+                        let areaCirculo = (radioCirculo*radioCirculo)*3.1416
+
+                        console.log(`El área del circulo es: ${areaCirculo}`);
+
+                    break;
+
+                    default: 
+                    console.log("Opción no valida");
+                }break;
+                
+
+            }else {
+                alert('No es un dato valido ingrese de nuevo');
+                continue;
+            }
+        } */
+
+        //Ejercicio #7
+        // Funcion para calcular si el numero es multiplo
+        /* function hayarMultiplos(valor, multiple)
+        {
+             // utilizando el modulo de la division
+            resto = valor % multiple;
+            if(resto==0)
+                return true;
+            else
+                return false;
+        }
+        // Arrays que contendran los valores multiples del 8
+        var multiplos=[];
+        const numero = 8;
+
+        // bucle del 1 al 500
+        for(var i=1;i<=500;i++)
+        {
+            if(hayarMultiplos(i,numero))
+                multiplos.push(i);
+        }
+        console.log(`Los multiplos de ${numero} son: ${multiplos}`); */
+
+
+        //Ejercicio #8
+        /* function pyramid(numPisos) {
+            for (let i = 1; i <= numPisos; i= i+2) {
+                
+                let piso = ''.padStart(i, "*").concat("".padStart(numPisos - i, " "))
+                console.log(piso)
+            }
+
+                for (let i = (numPisos -2); i>=1; i = i-2) {
+                    let piso = ''.padStart(i, "*").concat("".padStart(numPisos - i, " "))
+                    console.log(piso)
+                }
+            }
+
+            pyramid(9); */
+
+
+            function figuraB(numPisos) {
+                for (let i = numPisos; i>=1; i = i-2) {
+                    let piso = ''.padStart(i, "*").concat("".padStart(numPisos - i, " "))
+                    console.log(piso)
+
+                }
+
+                for (let i = 3; i <= numPisos; i= i+2) {
+                
+                let piso = ''.padStart(i, "*").concat("".padStart(numPisos - i, " "))
+                console.log(piso)
+                }
+            }
+            figuraB(9); 
+
+            let numPisos = Number(prompt("Digite número"))
+            function figuraC(numPisos) {
+                    for (let i = numPisos; i >= 1; i--) {
+                        let piso = ''.padStart(i, "*").concat("".padStart(numPisos - i, " "))
+                        console.log(piso)
+
+                    }
+                }
+
+                figuraC(numPisos);
+
+
+
+
+    </script>
+</body>
+</html>

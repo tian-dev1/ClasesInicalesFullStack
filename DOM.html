@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM!</title>
+</head>
+<body>
+    <form action="post.php" id="f" name="elformulario">
+        <label for="campo" id="etiqCampo">Campo de texto:</label>
+        <input type="text" name="campo" size="40">
+    </form>
+    <script>
+        
+        console.log(document.forms[0].elements);
+
+        //document.forms[0].elements[0].value = "Hola a todos!!"
+        document.elformulario.campo.value = "Holiwiis2!!!"
+    </script>
+</body>
+</html>

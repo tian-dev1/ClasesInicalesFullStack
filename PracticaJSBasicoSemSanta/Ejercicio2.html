@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EJercicio #2</title>
+</head>
+<body>
+    <script>
+        //Ejercicio #2
+        let cantEdades = 0
+        let edades = [];
+        let suma = 0;
+
+        while(true){
+            cantEdades = Number(prompt("Digite la cantidad de edades"))
+
+            if (!isNaN(cantEdades) && cantEdades != null && cantEdades != "") {
+                for (let i = 1; i <= cantEdades; i++) {
+                    let edad = Number(prompt(`Digite edad ${i}`))
+                    edades.push(edad);
+                }
+                //Array que almacena las edades
+                console.log(edades)
+
+                for (let i = 0; i < edades.length; i++) {
+                    console.log(`la suma de ${suma} + ${edades[i]} igual a:`);
+                    suma += edades[i];
+                    console.log(suma)
+                }
+                document.write(`El promedio de edad es: ${suma / edades.length}`);
+                break;
+            }else {
+                alert('No es un dato valido ingrese de nuevo');
+                continue;
+            }
+        }
+ 
+    </script>
+</body>
+</html>

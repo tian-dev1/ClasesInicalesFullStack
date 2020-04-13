@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio #6</title>
+</head>
+<body>
+
+    <script>
+        class Cajero{
+            //constructor -> Se va a inicializar cuando invoquemos a la clase
+            //Contiene las caracteristicas del objeto
+            constructor(idCajero,nombreVendedor){
+                this.idCajero = idCajero;
+                this.nombreVendedor =nombreVendedor;
+            }
+
+            //mostrar metodo propio del objeto Cajero
+            mostrar(){
+                return `ID Cajero: <strong> ${this.idCajero} </strong>  Vendedor: <strong> ${this.nombreVendedor} </strong> <br>`
+            }
+        }
+
+        //instancias del objeto Cajero
+        let Cajero1 = new Cajero(01, 'Cristian');
+        let Cajero2 = new Cajero(02, 'Camilo');
+        let Cajero3 = new Cajero(03, 'Jorge');
+        let Cajero4 = new Cajero(04, 'Luisa');
+        let Cajero5 = new Cajero(05, 'Lupita');
+        
+        //document.write(Cajero1.mostrar(), Cajero2.mostrar(), Cajero3.mostrar(), Cajero4.mostrar(), Cajero5.mostrar(), Cajero6.mostrar(), Cajero7.mostrar(), Cajero8.mostrar() );
+        
+
+        class Ventas extends Cajero{
+            //constructor -> Se va a inicializar cuando invoquemos a la clase
+            //Contiene las caracteristicas del objeto
+            constructor(idCajero, nombreVendedor, numDia, arrayVentas, ventasTotal){
+                super(idCajero, nombreVendedor);
+                this.numDia = numDia;
+                this.arrayVentas = arrayVentas;
+                this.ventasTotal =ventasTotal;
+            }
+
+            generarVentas(){
+                for (let j = 1; j <= 80; j++) {
+                    var numero = Math.floor(Math.random() * 10) + 1
+                    this.arrayVentas.push(numero);
+                }
+                return `ID Cajero: <strong> ${this.idCajero} </strong>  Vendedor: <strong> ${this.nombreVendedor} </strong> Vendedor: <strong> ${this.numDia} </strong> <br>  ventas: <strong> ${this.arrayVentas} </strong> <br><br><br><br>`;
+
+            }
+
+            totalVentas(numVenta){
+                for(let i= 0; i<numVenta.arrayVentas.length; i++){
+                    this.ventasTotal += numVenta.arrayVentas[i]
+                    //console.log(this.ventasTotal)
+                }
+                return `Total de ventas <strong> ${this.ventasTotal} </strong> del vendedor  <strong> ${numVenta.nombreVendedor} </strong> <br>`;
+            }
+        }
+
+        //instancias del objeto Cajero
+         let VentasCajero1 = new Ventas( Cajero1.idCajero, Cajero1.nombreVendedor, 80, [], 0);
+         let VentasCajero2 = new Ventas( Cajero2.idCajero, Cajero2.nombreVendedor, 80, [], 0);
+         let VentasCajero3 = new Ventas( Cajero3.idCajero, Cajero3.nombreVendedor, 80, [], 0);
+         let VentasCajero4 = new Ventas( Cajero4.idCajero, Cajero4.nombreVendedor, 80, [], 0);
+         let VentasCajero5 = new Ventas( Cajero5.idCajero, Cajero5.nombreVendedor, 80, [], 0);
+
+        document.write(VentasCajero1.generarVentas());
+        document.write(VentasCajero2.generarVentas());
+        document.write(VentasCajero3.generarVentas());
+        document.write(VentasCajero4.generarVentas());
+        document.write(VentasCajero5.generarVentas());
+
+        document.write(VentasCajero1.totalVentas(VentasCajero1));
+        document.write(VentasCajero2.totalVentas(VentasCajero2));
+        document.write(VentasCajero3.totalVentas(VentasCajero3));
+        document.write(VentasCajero4.totalVentas(VentasCajero4));
+        document.write(VentasCajero5.totalVentas(VentasCajero5));
+
+        
+        
+         
+
+
+        
+        
+    </script>
+</body>
+</html>
